@@ -1,26 +1,57 @@
 public class Employee {
+    // Declare private variables
+    private int id;
+    private String name;
+    private int age;
+    private int monthlySalary;
+    private String department;
 
-//      Nama Class diawali dengan huruf besar + camelCase
-//      Nama variable diawali dengan huruf kecil + camelCase
-//      Nama method diawali dengan huruf kecil + camelCase
-//      Nama package diawali dengan huruf kecil + camelCase
-
-    // How to declare variable
-    // 1. declare variable type of the variable
-    // 2. declare variable name
-    // 3. declare variable value
-    String countryName = "Indonesia";
-    public static void main(String[] args){
-        String countryName1 = "Indonesia";
-        System.out.println(countryName1);
-        System.out.println("Hello World");
-
+    // Declare public setter
+    public void setId(int id){
+        this.id = id;
     }
-    public int sum(int a, int b){
-        return a+b;
+    public void setName(String name){
+        this.name = name;
     }
-    public void printCountryName(){
+    public void setAge(int age){
+        this.age = age;
+    }
+    public void setMonthlySalary(int monthlySalary){
+        this.monthlySalary = monthlySalary;
+    }
+    public void setDepartment(String department){
+        this.department = department;
+    }
+    
+    // Declear public getter
+    public int getId(){
+        return this.id;
+    }
+    public String getName(){
+        return this.name;
+    }
+    public int getAge(){
+        return this.age;
+    }
+    public int getMonthlySalary(){
+        return this.monthlySalary;
+    }
+    public String getDepartment(){
+        return this.department;
+    }
+    public static void main(String[] args) {
+        Employee john = new Employee();
+        john.setId(1);
+        john.setName("John");
+        john.setAge(25);
+        john.setMonthlySalary(5000);
+        john.setDepartment("IT");
         
-        System.out.println(countryName);
+        System.out.println("Employee ID: " + john.getId());
+        System.out.println("Employee Name: " + john.getName());
+        System.out.println("Employee Age: " + john.getAge());
+        System.out.println("Employee Monthly Salary: " + john.getMonthlySalary());
+        System.out.println("Employee Department: " + john.getDepartment());
     }
+
 }
