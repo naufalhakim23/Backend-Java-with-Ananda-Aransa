@@ -47,6 +47,30 @@ public class MiniCalculator {
         }
         return false;
     }
+    public boolean isMultiply(int a, int b, int c) {
+        if (a * b == c) {
+            return true;
+        }
+        return false;
+    }
+    public boolean isFibonacci(int a, int b, int c) {
+        if (fibonna(a) + fibonna(b) == c) {
+            return true;
+        }
+        return false;
+    }
+    public boolean isSortDesc(int[] arr, int a, int b, int c) {
+        if (sortDesc(arr) == a + b + c) {
+            return true;
+        }
+        return false;
+    }
+    public boolean isSortAsc(int[] arr, int a, int b, int c) {
+        if (sortAsc(arr) == a + b + c) {
+            return true;
+        }
+        return false;
+    }
     public static void main(String[] args) {
         MiniCalculator calculator = new MiniCalculator();
         System.out.println(calculator.sum(1, 2));
@@ -56,5 +80,9 @@ public class MiniCalculator {
         System.out.println(calculator.sortDesc(arr));
         System.out.println(calculator.sortAsc(arr));
         System.out.println("Apakah 1+2 =3 ?" + calculator.isSum(1, 2, 3));
+        System.out.println("Apakah 1*2 =3 ?" + calculator.isMultiply(1, 2, 5));
+        System.out.println("Apakah Fibonacci 1 dan 2 = 2 ?" + calculator.isFibonacci(1, 2, 2));
+        System.out.println("Apakah Sort Desc 1, 2, 3 ?" + calculator.isSortDesc(arr, 1, 2, 3));
+        System.out.println("Apakah Sort Asc 1, 2, 3 ?" + calculator.isSortAsc(arr, 1, 2, 3));
     }
 }
