@@ -142,8 +142,9 @@ public class EacsEmployee {
             System.out.println("");
         }
         //Searching Rizki and Hikaru in Array
-        System.out.println("Hikaru is number "+EacsEmployee.findEmployeeIndex(employeeEacs, "Rizki")+" in Array");
+        System.out.println("Rizki is number "+EacsEmployee.findEmployeeIndex(employeeEacs, "Rizki")+" in Array");
         System.out.println("Hikaru is number "+EacsEmployee.findEmployeeIndex(employeeEacs, "Hikaru")+" in Array");
+        System.out.println("");
 
         // Updating Siti with John
         System.out.println("Updating Siti with John");
