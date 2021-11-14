@@ -1,3 +1,4 @@
+package week1;
 public class Excercise {
 
     //      Nama Class diawali dengan huruf besar + camelCase

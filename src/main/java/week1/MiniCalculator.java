@@ -1,7 +1,10 @@
+package week1;
 public class MiniCalculator {
+
     int sum(int number1, int number2) {
         return number1 + number2;
     }
+    
     int multiply(int a, int b) {
         return a * b;
     }
@@ -71,18 +74,38 @@ public class MiniCalculator {
         }
         return false;
     }
+    public boolean isTriplePythagoras(int num1, int num2, int num3) {
+        int temp = 0;
+        int[] array = {num1, num2, num3};
+        for (int i = 0; i < array.length-1; i++) {
+            if (array[i] > array[i+1]) {
+                temp = array[i];
+                array[i] = array[i+1];
+                array[i+1] = temp;
+            }
+        }
+        return array[0] * array[0] + array[1] * array[1] == array[2] * array[2] ? true:false;
+    }
+
+
     public static void main(String[] args) {
         MiniCalculator calculator = new MiniCalculator();
         System.out.println(calculator.sum(1, 2));
         System.out.println(calculator.multiply(1, 2));
         System.out.println(calculator.fibonna(5));
+
+        Employee employee = new Employee();
+        employee.jurusan = "Teknik Informatika";
+
+        employee.setAge(17);
+
         int[] arr = {1, 2, 3, 4, 5};
         System.out.println(calculator.sortDesc(arr));
         System.out.println(calculator.sortAsc(arr));
         System.out.println("Apakah 1+2 =3 ?" + calculator.isSum(1, 2, 3));
         System.out.println("Apakah 1*2 =3 ?" + calculator.isMultiply(1, 2, 5));
         System.out.println("Apakah Fibonacci 1 dan 2 = 2 ?" + calculator.isFibonacci(1, 2, 2));
-        System.out.println("Apakah Sort Desc 1, 2, 3 ?" + calculator.isSortDesc(arr, 1, 2, 3));
-        System.out.println("Apakah Sort Asc 1, 2, 3 ?" + calculator.isSortAsc(arr, 1, 2, 3));
+
+        System.out.println("Apakah 3,4,5 adalah triple pythagoras ?" + calculator.isTriplePythagoras(3, 5, 7));
     }
 }

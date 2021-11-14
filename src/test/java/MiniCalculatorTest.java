@@ -1,6 +1,8 @@
 import org.junit.Assert;
 import org.junit.Test;
 
+import week1.MiniCalculator;
+
 public class MiniCalculatorTest {
 
     MiniCalculator miniCalculator = new MiniCalculator();
@@ -13,6 +15,7 @@ public class MiniCalculatorTest {
         Assert.assertEquals(false, miniCalculator.isSum(1,2,4));
         Assert.assertEquals(false, miniCalculator.isSum(1,2,25));
     }
+    
     @Test
     public void testIsMultiply() {
         Assert.assertTrue(miniCalculator.isMultiply(5,2,10));

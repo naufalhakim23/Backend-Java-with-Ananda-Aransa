@@ -1,3 +1,4 @@
+package week1;
 public class Employee {
     // Declare private variables
     private int id;
@@ -5,7 +6,9 @@ public class Employee {
     private int age;
     private int monthlySalary;
     private String department;
+    String jurusan;
 
+    // Class, object dan method
     // Declare public setter
     public void setId(int id){
         this.id = id;
