@@ -80,6 +80,42 @@ public class EacsEmployee {
         }
         return employeeArrayNew;
     }
+    //Delete Array String
+    static String[] deleteEmployeeEacs(int n, String[] employeeArray, int index)
+    {
+        int i;
+        String[] employeeArrayNew = new String[n-1];
+        for (i = 0; i < n; i++)
+        {
+            if (i < index)
+            {
+                employeeArrayNew[i] = employeeArray[i];
+            }
+            else if (i > index)
+            {
+                employeeArrayNew[i-1] = employeeArray[i];
+            }
+        }
+        return employeeArrayNew;
+    }
+    //Delete Array Int
+    static int[] deleteEmployeeAge(int n, int[] employeeArray, int index)
+    {
+        int i;
+        int[] employeeArrayNew = new int[n-1];
+        for (i = 0; i < n; i++)
+        {
+            if (i < index)
+            {
+                employeeArrayNew[i] = employeeArray[i];
+            }
+            else if (i > index)
+            {
+                employeeArrayNew[i-1] = employeeArray[i];
+            }
+        }
+        return employeeArrayNew;
+    }
     public static void main(String[] args) {
         // Checking Table Employee
         for (int i = 0; i < employeeEacs.length; i++) {
@@ -106,8 +142,8 @@ public class EacsEmployee {
             System.out.println("");
         }
         //Searching Rizki and Hikaru in Array
-        System.out.println(""+EacsEmployee.findEmployeeIndex(employeeEacs, "Rizki"));
-        System.out.println(""+EacsEmployee.findEmployeeIndex(employeeEacs, "Hikaru"));
+        System.out.println("Hikaru is number "+EacsEmployee.findEmployeeIndex(employeeEacs, "Rizki")+" in Array");
+        System.out.println("Hikaru is number "+EacsEmployee.findEmployeeIndex(employeeEacs, "Hikaru")+" in Array");
 
         // Updating Siti with John
         System.out.println("Updating Siti with John");
@@ -127,7 +163,24 @@ public class EacsEmployee {
             System.out.println("Employee Age: " + employeeAge[i]);
             System.out.println("");
         }
+        // Deleting Farin
+        System.out.println("Deleting Farin");
+        indexed = EacsEmployee.findEmployeeIndex(employeeEacs, "Farin");
+        employeeEacs = EacsEmployee.deleteEmployeeEacs(employeeEacs.length, employeeEacs, indexed);
+        employeeAddress = EacsEmployee.deleteEmployeeEacs(employeeAddress.length, employeeAddress, indexed);
+        employeeAge = EacsEmployee.deleteEmployeeAge(employeeAge.length, employeeAge, indexed);
+        System.out.println("Employee EACS: " + employeeEacs[indexed]);
+        System.out.println("Employee Address: " + employeeAddress[indexed]);
+        System.out.println("Employee Age: " + employeeAge[indexed]);
+        System.out.println("");
         
+        // Checking Table Employee after deleting Farin
+        for (int i = 0; i < employeeEacs.length; i++) {
+            System.out.println("Employee EACS: " + employeeEacs[i]);
+            System.out.println("Employee Address: " + employeeAddress[i]);
+            System.out.println("Employee Age: " + employeeAge[i]);
+            System.out.println("");
+        }
     }
 
 }
